@@ -21,15 +21,15 @@ Features of app include:
 
 ### Image Configuration
 
-- Image Size and Aspect Ratio: Easy-to-use controls for pre-selected image sizes and aspect ratios or custom sizes
+- Image Size and Aspect Ratio: Chose from pre-selected image sizes and aspect ratios or input a custom image size
 - Image Size: Confirms the image is within the minimum and maximum total pixel size limit
 - Image Aspect Ratio: Confirms the image is within the maximum aspect ratio limit
 - Image Dimensions: Confirms the image is within the minimum and maximum pixel width and height limits
-- Image Display and Saving: Both display the generated up to 5 images and save them to a local directory within the project
+- Image Display and Saving: Generate, display, and save up to five images per request
 
 ## Image Samples
 
-All these images were created with a single prompt, using this app. No additional cropping or retouching was performed.
+All images shown below were created using this app. No additional post-production cropping or retouching was performed.
 
 ![Image Examples](./ui_preview/canvas_examples_1.png)
 

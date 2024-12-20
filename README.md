@@ -7,6 +7,8 @@ You might want to include details about the subject, action, environment, lighti
 
 ![Image Examples](./ui_preview/canvas_examples.png)
 
+## Features
+
 This Streamlit-based UI helps you be mindful of Amazon Nova Canvas' requirements and best practices. Features of UI include:
 
 ### Prompt Parameters

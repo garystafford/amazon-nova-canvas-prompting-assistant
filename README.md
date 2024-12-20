@@ -114,8 +114,6 @@ python --version
 
 python -m venv .venv
 .venv\Scripts\activate
-
-where python
 ```
 
 Install Python package dependencies:

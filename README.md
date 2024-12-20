@@ -41,7 +41,7 @@ All these images were created with a single prompt, using this app. No additiona
 
 ![UI Preview](./ui_preview/canvas_ui_02.png)
 
-![UI Preview](./ui_preview/canvas_ui_03.png)
+![UI Preview](./ui_preview/canvas_ui_03b.png)
 
 ![Saved Images](./ui_preview/saved_files_2.png)
 

@@ -51,7 +51,7 @@ All these images were created with a single prompt, using this app. No additiona
 
 ## Prerequisites
 
-The only prerequisites are a recent version of Python and AWS IAM console access to Amazon Bedrock and the Amazon Nova Canvas model.
+This app works on Windows, Mac, and Linux OS-based systems. The only prerequisites are a recent version of Python and AWS IAM console access to Amazon Bedrock and the Amazon Nova Canvas model.
 
 ## Mac
 
@@ -68,7 +68,7 @@ export AWS_SESSION_TOKEN="<YOUR_AWS_SESSION_TOKEN>"
 Create a virtual Python environment:
 
 ```sh
-python --version # I am using Python 3.13.0
+python --version # I am using Python 3.13.x
 
 python -m pip install virtualenv -U # --break-system-packages
 python -m venv .venv
@@ -88,7 +88,7 @@ Run the Streamlit application:
 
 ```sh
 streamlit run app.py \
-    --server.runOnSave true \
+    --server.runOnSave "true" \
     --theme.base "dark" \
     --theme.backgroundColor "#26273B" \
     --theme.primaryColor "#ACADC1" \
@@ -137,7 +137,7 @@ Run the Streamlit application
 
 ```bat
 streamlit run app.py `
-    --server.runOnSave true `
+    --server.runOnSave "true" `
     --theme.base "dark" `
     --theme.backgroundColor "#26273B" `
     --theme.primaryColor "#ACADC1" `

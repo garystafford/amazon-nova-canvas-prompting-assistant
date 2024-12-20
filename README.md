@@ -25,7 +25,7 @@ Features of app include:
 - Image Size: Confirms the image is within the minimum and maximum total pixel size limit
 - Image Aspect Ratio: Confirms the image is within the maximum aspect ratio limit
 - Image Dimensions: Confirms the image is within the minimum and maximum pixel width and height limits
-- Image Display and Saving: Both display the generated image and save them to a local directory
+- Image Display and Saving: Both display the generated up to 5 images and save them to a local directory within the project
 
 ## Image Samples
 

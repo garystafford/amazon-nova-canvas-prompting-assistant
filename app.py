@@ -547,8 +547,9 @@ def createForm() -> None:
                 images = generate_image(model_id=MODEL_ID, body=body)
                 end_time = datetime.datetime.now()
                 total_time = (end_time - start_time).total_seconds()
+                time_per_image = total_time / len(images)
                 st.sidebar.info(
-                    f"Total time to generate images: {total_time:.2f} seconds"
+                    f"Total time to generate {len(images)} images: {total_time:.2f} seconds, or an average of {time_per_image:.2f} seconds per image."
                 )
                 display_images(images)
                 save_images(images)

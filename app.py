@@ -346,7 +346,7 @@ def createForm() -> None:
 
     prompt_sample_select = st.selectbox(
         label="Prompt samples",
-        options=(0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
+        options=range(len(prompt_samples)),
         index=0,
         format_func=lambda x: prompt_samples[x].title,
         help="Select a prompt sample to use as a starting point for your image or enter your own custom prompt.",
@@ -390,7 +390,7 @@ def createForm() -> None:
 
     negative_text_sample_select = st.selectbox(
         label="Negative prompt samples",
-        options=(0, 1, 2, 3, 4),
+        options=range(len(negative_text_samples)),
         index=0,
         format_func=lambda x: negative_text_samples[x].title,
         help="Select a negative prompt sample or enter your own custom negative prompt.",

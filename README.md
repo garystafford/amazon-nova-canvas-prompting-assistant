@@ -131,13 +131,13 @@ streamlit run app.py \
 ## Windows: Run the Streamlit application
 
 ```bat
-streamlit run app.py ^
-    --server.runOnSave true ^
-    --theme.base "dark" ^
-    --theme.backgroundColor "#26273B" ^
-    --theme.primaryColor "#ACADC1" ^
-    --theme.secondaryBackgroundColor "#454560" ^
-    --theme.font "sans serif"^
-    --ui.hideTopBar "true" ^
+streamlit run app.py `
+    --server.runOnSave true `
+    --theme.base "dark" `
+    --theme.backgroundColor "#26273B" `
+    --theme.primaryColor "#ACADC1" `
+    --theme.secondaryBackgroundColor "#454560" `
+    --theme.font "sans serif"`
+    --ui.hideTopBar "true" `
     --client.toolbarMode "minimal"
 ```

@@ -6,9 +6,11 @@
 # https://docs.aws.amazon.com/nova/latest/userguide/image-gen-req-resp-structure.html
 
 import base64
+import datetime
 import io
 import json
 import logging
+import time
 import uuid
 from collections import defaultdict
 from dataclasses import dataclass, field
@@ -357,27 +359,27 @@ def createForm() -> None:
         help="The main subject of the image.",
     )
     environment = st.text_input(
-        "Environment",
+        "Environment (optional)",
         prompt_samples[prompt_sample_select].environment,
         help="The setting or background of the image.",
     )
     action = st.text_input(
-        "Subject action, position, and pose",
+        "Subject action, position, and pose (optional)",
         prompt_samples[prompt_sample_select].action,
         help="The action, position, and/or pose of the subject in the image.",
     )
     lighting = st.text_input(
-        "Lighting",
+        "Lighting (optional)",
         prompt_samples[prompt_sample_select].lighting,
         help="The lighting conditions of the image.",
     )
     camera = st.text_input(
-        "Camera position and framing",
+        "Camera position and framing (optional)",
         prompt_samples[prompt_sample_select].camera,
         help="The camera position and/or framing of the image.",
     )
     style = st.text_input(
-        "Image style",
+        "Image style (optional)",
         prompt_samples[prompt_sample_select].style,
         help="The style and medium of the image (e.g., 'photo', 'illustration', 'painting').",
     )
@@ -542,7 +544,13 @@ def createForm() -> None:
                 )
 
                 body = generate_body(request_params)
+                start_time = datetime.datetime.now()
                 images = generate_image(model_id=MODEL_ID, body=body)
+                end_time = datetime.datetime.now()
+                total_time = (end_time - start_time).total_seconds()
+                st.sidebar.info(
+                    f"Total time to generate images: {total_time:.2f} seconds"
+                )
                 display_images(images)
                 save_images(images)
             except ClientError as err:
@@ -556,10 +564,10 @@ def createForm() -> None:
                 logger.info(
                     f"Finished generating image with Amazon Nova Canvas, model ID: {MODEL_ID}."
                 )
-    # st.markdown(
-    #     "<small style='color: #ACADC1; align: right;'> Gary A. Stafford, 2024</small>",
-    #     unsafe_allow_html=True,
-    # )
+    st.markdown(
+        "<small style='color: #ACADC1'> Gary A. Stafford, 2024</small>",
+        unsafe_allow_html=True,
+    )
 
 
 def get_negative_text_samples() -> list[dict]:
@@ -575,7 +583,7 @@ def get_negative_text_samples() -> list[dict]:
     negative_text_samples = [
         NegativePrompt(
             title="Custom (blank)",
-            text="",
+            text=" ",
         ),
         NegativePrompt(
             title="Avoid poor general image quality",

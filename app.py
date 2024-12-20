@@ -1,4 +1,4 @@
-# Description: Amazon Nova Canvas prompting assistant
+# Description: Amazon Nova Canvas Prompting Assistant
 # Author: Gary A. Stafford
 # Date: 2024-12-16
 # Amazon Nova Canvas References:
@@ -10,7 +10,6 @@ import datetime
 import io
 import json
 import logging
-import time
 import uuid
 from collections import defaultdict
 from dataclasses import dataclass, field

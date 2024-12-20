@@ -1,15 +1,17 @@
 # Amazon Nova Canvas Prompting Assistant
 
-Prompting for image generation models differs from prompting for large language models (LLMs).
+According to [AWS](https://docs.aws.amazon.com/nova/latest/userguide/prompting-image-generation.html), prompting for image generation models differs from prompting for large language models (LLMs).
 Image generation models cannot reason or interpret explicit commands.
 Therefore, it's best to phrase your prompt as an image caption rather than a command or conversation.
 You might want to include details about the subject, action, environment, lighting, style, and camera position.
+Additionally, negative prompts help you to exclude objects or style characteristics that might otherwise naturally occur as a result of your main prompt.
+Often, it's not about finding a better model, it's about writing better prompts. This Streamlit-based UI helps you be mindful of Amazon Nova Canvas' requirements and best practices.
 
 ![Image Examples](./ui_preview/canvas_examples.png)
 
 ## Features
 
-This Streamlit-based UI helps you be mindful of Amazon Nova Canvas' requirements and best practices. Features of UI include:
+Features of UI include:
 
 ### Prompt Parameters
 

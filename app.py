@@ -316,7 +316,7 @@ def main() -> None:
     st.markdown("## Amazon Nova Canvas Prompting Assistant")
 
     st.markdown(
-        """Prompting for image generation models differs from prompting for large language models (LLMs). 
+        """According to [AWS](https://docs.aws.amazon.com/nova/latest/userguide/prompting-image-generation.html), prompting for image generation models differs from prompting for large language models (LLMs). 
                 Image generation models do not have the ability to reason or interpret explicit commands. 
                 Therefore, it's best to phrase your prompt as if it were an image caption rather than a command or conversation. 
                 You might want to include details about the subject, action, environment, lighting, style, and camera position. 

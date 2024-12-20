@@ -483,7 +483,7 @@ def createForm() -> None:
             max_value=858_993_459,
             value=42,
             step=1,
-            help="The seed for the image generation.",
+            help="The seed for the image generation. Using a different seed, the model is able to generate different images each time, even if all other values stay the same.",
         )
     st.markdown("---")
     submit_button = st.button(label="Generate Image(s)")

@@ -43,9 +43,11 @@ This Streamlit-based UI helps you be mindful of Amazon Nova Canvas' requirements
 
 The only prerequisites are a recent version of Python and AWS IAM console access to Amazon Bedrock and the Amazon Nova Canvas model.
 
-## Mac: Configure Environment
+## Mac
 
-Before starting the application, make sure you have provided your AWS credential on the command line or using an alternative authentication method.
+AWS credentials:
+
+Before starting the application, ensure you have provided your AWS credential on the command line or use an alternative authentication method.
 
 ```sh
 export AWS_ACCESS_KEY_ID="<YOUR_AWS_ACCESS_KEY_ID>"
@@ -72,6 +74,20 @@ python -m pip install -r requirements.txt -U
 streamlit --version
 ```
 
+Run the Streamlit application:
+
+```sh
+streamlit run app.py \
+    --server.runOnSave true \
+    --theme.base "dark" \
+    --theme.backgroundColor "#26273B" \
+    --theme.primaryColor "#ACADC1" \
+    --theme.secondaryBackgroundColor "#454560" \
+    --theme.font "sans serif"\
+    --ui.hideTopBar "true" \
+    --client.toolbarMode "minimal"
+```
+
 Deactivate and delete the virtual environment once you are done:
 
 ```sh
@@ -79,9 +95,11 @@ deactivate
 rm -rf .venv
 ```
 
-## Windows: Configure Environment
+## Windows
 
-Before starting the application, make sure you have provided your AWS credential on the command line or using an alternative authentication method.
+AWS credentials:
+
+Before starting the application, ensure you have provided your AWS credential on the command line or use an alternative authentication method.
 
 ```bat
 set AWS_ACCESS_KEY_ID="<YOUR_AWS_ACCESS_KEY_ID>"
@@ -107,28 +125,7 @@ python -m pip install pip -U
 python -m pip install -r requirements.txt -U
 ```
 
-Deactivate and delete the virtual environment once you are done:
-
-```bat
-deactivate
-rm -rf .venv
-```
-
-## Mac: Run the Streamlit application
-
-```sh
-streamlit run app.py \
-    --server.runOnSave true \
-    --theme.base "dark" \
-    --theme.backgroundColor "#26273B" \
-    --theme.primaryColor "#ACADC1" \
-    --theme.secondaryBackgroundColor "#454560" \
-    --theme.font "sans serif"\
-    --ui.hideTopBar "true" \
-    --client.toolbarMode "minimal"
-```
-
-## Windows: Run the Streamlit application
+Run the Streamlit application
 
 ```bat
 streamlit run app.py `
@@ -140,4 +137,11 @@ streamlit run app.py `
     --theme.font "sans serif"`
     --ui.hideTopBar "true" `
     --client.toolbarMode "minimal"
+```
+
+Deactivate and delete the virtual environment once you are done:
+
+```bat
+deactivate
+rm -rf .venv
 ```

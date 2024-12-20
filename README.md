@@ -39,7 +39,7 @@ All images shown below were created using this app. No additional post-productio
 
 ![UI Preview](./ui_preview/canvas_ui_01.png)
 
-![UI Preview](./ui_preview/canvas_ui_02b.png)
+![UI Preview](./ui_preview/canvas_ui_02c.png)
 
 ![UI Preview](./ui_preview/canvas_ui_03b.png)
 

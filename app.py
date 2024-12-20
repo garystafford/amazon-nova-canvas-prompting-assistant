@@ -345,7 +345,7 @@ def createForm() -> None:
 
     prompt_sample_select = st.selectbox(
         label="Prompt samples",
-        options=(0, 1, 2, 3, 4, 5, 6, 7, 8),
+        options=(0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
         index=0,
         format_func=lambda x: prompt_samples[x].title,
         help="Select a prompt sample to use as a starting point for your image or enter your own custom prompt.",
@@ -479,7 +479,7 @@ def createForm() -> None:
         seed = st.slider(
             "Seed",
             min_value=0,
-            max_value=2147483647,
+            max_value=858_993_459,
             value=42,
             step=1,
             help="The seed for the image generation.",
@@ -693,6 +693,15 @@ def get_prompt_samples() -> list[Prompt]:
             lighting="",
             camera="",
             style="Japanese-style, Katsushika Hokusai, woodblock print, ukiyo-e print, Edo period, handmade Washi paper",
+        ),
+        Prompt(
+            title="Oil painting of Tango dancers",
+            subject="Man and woman both dressed in formal attire with the woman wearing a red dress",
+            environment="Dark gray, creating an atmosphere of mystery and elegance",
+            action="Dancing the tango",
+            lighting="",
+            camera="",
+            style="Oil painting",
         ),
     ]
 

@@ -1,8 +1,8 @@
 # Amazon Nova Canvas Prompting Assistant
 
 Prompting for image generation models differs from prompting for large language models (LLMs).
-Image generation models do not have the ability to reason or interpret explicit commands.
-Therefore, it's best to phrase your prompt as if it were an image caption rather than a command or conversation.
+Image generation models cannot reason or interpret explicit commands.
+Therefore, it's best to phrase your prompt as an image caption rather than a command or conversation.
 You might want to include details about the subject, action, environment, lighting, style, and camera position.
 
 ![Image Examples](./ui_preview/canvas_examples.png)
@@ -12,18 +12,18 @@ This Streamlit-based UI helps you be mindful of Amazon Nova Canvas' requirements
 ### Prompt Parameters
 
 - Prompt Template: Breaks down prompt input into separate aspects: subject, action, environment, lighting, style, and camera position
-- Prompt Samples: Provides sample prompt as a reference
-- Prompt Negation: Checks for the use negation words in the prompt and issues a warning
+- Prompt Samples: Provide sample prompts as a reference
+- Prompt Negation: Checks for the use of negation words in the prompt and issues a warning
 - Prompt Length: Confirms the prompt is within the maximum character length
-- Negative Prompt Samples: Provides sample negative prompt as a reference
+- Negative Prompt Samples: Provide sample negative prompts as a reference
 
 ### Image Configuration
 
-- Image Size and Aspect Ratio: Easy-to-use controls for pre-selected image sizes and aspect ratios, or custom sizes
+- Image Size and Aspect Ratio: Easy-to-use controls for pre-selected image sizes and aspect ratios or custom sizes
 - Image Size: Confirms the image is within the maximum total pixel size limit
 - Image Aspect Ratio: Confirms the image is within the maximum aspect ratio limit
 - Image Dimensions: Confirms the image is within the minimum and maximum pixel width and height limits
-- Image Display and Saving: Both displays the generated image and saves them to a local directory
+- Image Display and Saving: Both display the generated image and save them to a local directory
 
 ## UI Preview
 
@@ -41,11 +41,11 @@ This Streamlit-based UI helps you be mindful of Amazon Nova Canvas' requirements
 
 ## Prerequisites
 
-The only prerequisites are a recently version of Python and AWS IAM console access to Amazon Bedrock and Amazon Nova Canvas model.
+The only prerequisites are a recent version of Python and AWS IAM console access to Amazon Bedrock and the Amazon Nova Canvas model.
 
 ## Mac: Configure Environment
 
-Make sure you have provided your AWS credential on the commandline, or using an alternative authentication method, before starting the application.
+Before starting the application, make sure you have provided your AWS credential on the command line or using an alternative authentication method.
 
 ```sh
 export AWS_ACCESS_KEY_ID="<YOUR_AWS_ACCESS_KEY_ID>"
@@ -53,7 +53,7 @@ export AWS_SECRET_ACCESS_KEY="<YOUR_AWS_SECRET_ACCESS_KEY>"
 export AWS_SESSION_TOKEN="<YOUR_AWS_SESSION_TOKEN>"
 ```
 
-Create a virtual Python environment
+Create a virtual Python environment:
 
 ```sh
 python --version # I am using Python 3.13.0
@@ -63,7 +63,7 @@ python -m venv .venv
 source .venv/bin/activate
 ```
 
-Install Python package dependencies
+Install Python package dependencies:
 
 ```sh
 python -m pip install pip -U
@@ -72,7 +72,7 @@ python -m pip install -r requirements.txt -U
 streamlit --version
 ```
 
-Deactivate and delete virtual environment once you are done
+Deactivate and delete the virtual environment once you are done:
 
 ```sh
 deactivate
@@ -81,7 +81,7 @@ rm -rf .venv
 
 ## Windows: Configure Environment
 
-Make sure you have provided your AWS credential on the commandline, or using an alternative authentication method, before starting the application.
+Before starting the application, make sure you have provided your AWS credential on the command line or using an alternative authentication method.
 
 ```bat
 set AWS_ACCESS_KEY_ID="<YOUR_AWS_ACCESS_KEY_ID>"
@@ -89,23 +89,25 @@ set AWS_SECRET_ACCESS_KEY="<YOUR_AWS_SECRET_ACCESS_KEY>"
 set AWS_SESSION_TOKEN="<YOUR_AWS_SESSION_TOKEN>"
 ```
 
-Create a virtual Python environment
+Create a virtual Python environment:
 
 ```bat
+python --version
+
 python -m venv .venv
 .venv\Scripts\activate
 
 where python
 ```
 
-Install Python package dependencies
+Install Python package dependencies:
 
 ```bat
 python -m pip install pip -U
 python -m pip install -r requirements.txt -U
 ```
 
-Deactivate and delete virtual environment once you are done
+Deactivate and delete the virtual environment once you are done:
 
 ```bat
 deactivate

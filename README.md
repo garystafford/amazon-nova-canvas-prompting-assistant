@@ -5,17 +5,15 @@ Image generation models cannot reason or interpret explicit commands.
 Therefore, it's best to phrase your prompt as an image caption rather than a command or conversation.
 You might want to include details about the subject, action, environment, lighting, style, and camera position.
 Additionally, negative prompts help you to exclude objects or style characteristics that might otherwise naturally occur as a result of your main prompt.
-Often, it's not about finding a better model, it's about writing better prompts. This Streamlit-based UI helps you be mindful of Amazon Nova Canvas' requirements and best practices.
-
-![Image Examples](./ui_preview/canvas_examples.png)
+Often, it's not about finding a better model, it's about writing better prompts. This Streamlit-based app helps you be mindful of Amazon Nova Canvas' requirements and best practices.
 
 ## Features
 
-Features of UI include:
+Features of app include:
 
 ### Prompt Parameters
 
-- Prompt Template: Breaks down prompt input into separate aspects: subject, action, environment, lighting, style, and camera position
+- Prompt Template: Breaks down prompt input into separate optional aspects: subject, action, environment, lighting, style, and camera position
 - Prompt Samples: Provide sample prompts as a reference
 - Prompt Negation: Checks for the use of negation words in the prompt and issues a warning
 - Prompt Length: Confirms the prompt is within the maximum character length
@@ -24,10 +22,18 @@ Features of UI include:
 ### Image Configuration
 
 - Image Size and Aspect Ratio: Easy-to-use controls for pre-selected image sizes and aspect ratios or custom sizes
-- Image Size: Confirms the image is within the maximum total pixel size limit
+- Image Size: Confirms the image is within the minimum and maximum total pixel size limit
 - Image Aspect Ratio: Confirms the image is within the maximum aspect ratio limit
 - Image Dimensions: Confirms the image is within the minimum and maximum pixel width and height limits
 - Image Display and Saving: Both display the generated image and save them to a local directory
+
+## Image Samples
+
+All these images were created with a single prompt, using this app. No additional cropping or retouching was performed.
+
+![Image Examples](./ui_preview/canvas_examples_1.png)
+
+![Image Examples](./ui_preview/canvas_examples_2.png)
 
 ## UI Preview
 

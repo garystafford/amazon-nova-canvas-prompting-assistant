@@ -43,6 +43,8 @@ All these images were created with a single prompt, using this app. No additiona
 
 ![UI Preview](./ui_preview/canvas_ui_03.png)
 
+![Saved Images](./ui_preview/saved_files.png)
+
 ## Amazon Nova References
 
 - [User Guide for Amazon Nova: Amazon Nova Canvas prompting best practices](https://docs.aws.amazon.com/nova/latest/userguide/prompting-image-generation.html)

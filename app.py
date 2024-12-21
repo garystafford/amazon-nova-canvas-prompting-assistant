@@ -37,6 +37,7 @@ MAX_IMAGE_SIZE: int = 4_096
 MIN_IMAGE_SIZE: int = 320
 MAX_ASPECT_RATIO: int = 4
 MAX_PIXEL_COUNT: int = 4_194_304
+MIN_PROMPT_LENGTH: int = 1
 MAX_PROMPT_LENGTH: int = 1_024
 
 
@@ -148,11 +149,18 @@ class Prompt:
 
         prompt = ", \n".join(filter(None, fields))
 
+        if len(prompt) < MIN_PROMPT_LENGTH:
+            raise PromptValidationError(
+                f"Prompt must be at least {MIN_PROMPT_LENGTH} character in length."
+            )
+
         if len(prompt) > MAX_PROMPT_LENGTH:
             raise PromptValidationError(
                 f"Prompt length {len(prompt)} exceeds maximum {MAX_PROMPT_LENGTH} characters."
             )
 
+        if len(self.subject) < MIN_PROMPT_LENGTH:
+            raise PromptValidationError(f"The 'Subject' is a required field.")
         return prompt
 
 

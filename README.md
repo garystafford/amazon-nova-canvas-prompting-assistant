@@ -95,7 +95,7 @@ streamlit run app.py \
     --theme.backgroundColor "#26273B" \
     --theme.primaryColor "#ACADC1" \
     --theme.secondaryBackgroundColor "#454560" \
-    --theme.font "sans serif"\
+    --theme.font "sans serif" \
     --ui.hideTopBar "true" \
     --client.toolbarMode "minimal"
 ```
@@ -144,7 +144,7 @@ streamlit run app.py `
     --theme.backgroundColor "#26273B" `
     --theme.primaryColor "#ACADC1" `
     --theme.secondaryBackgroundColor "#454560" `
-    --theme.font "sans serif"`
+    --theme.font "sans serif" `
     --ui.hideTopBar "true" `
     --client.toolbarMode "minimal"
 ```

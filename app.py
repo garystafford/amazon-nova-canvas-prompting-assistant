@@ -168,8 +168,8 @@ class Prompt:
 class NegativePrompt:
     """Handles negative prompts for Amazon Nova Canvas."""
 
-    title: str
-    text: str
+    title: str = field(default="Custom negative prompt")
+    text: Optional[str] = field(default="")
 
 
 @dataclass
@@ -718,6 +718,15 @@ def get_prompt_samples() -> list[Prompt]:
             lighting="",
             camera="",
             style="Oil painting",
+        ),
+        Prompt(
+            title="Retro-style lounge scene",
+            subject="60-style, retro-inspired lounge",
+            environment="Shaggy rugs, vintage stereo, mid-century furniture",
+            action="",
+            lighting="",
+            camera="",
+            style="Minimalist illustration, clean, flat, flat colors, graphic, color palette of teal, orange, brown",
         ),
     ]
 

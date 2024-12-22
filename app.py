@@ -721,12 +721,12 @@ def get_prompt_samples() -> list[Prompt]:
         ),
         Prompt(
             title="Retro-style lounge scene",
-            subject="60-style, retro-inspired lounge",
+            subject="60’s style, retro-inspired lounge",
             environment="Shaggy rugs, vintage stereo, mid-century furniture",
             action="",
             lighting="",
             camera="",
-            style="Minimalist illustration, clean, flat, flat colors, graphic, color palette of teal, orange, brown",
+            style="60’s illustration style, graphic, graphic art, flat color, color palette of teal, orange, brown",
         ),
     ]
 

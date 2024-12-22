@@ -35,6 +35,8 @@ All images shown below were created using this app. No additional post-productio
 
 ![Image Examples](./ui_preview/canvas_examples_2.png)
 
+![Image Examples](./ui_preview/canvas_examples_3.png)
+
 ## UI Preview
 
 ![UI Preview](./ui_preview/canvas_ui_01.png)

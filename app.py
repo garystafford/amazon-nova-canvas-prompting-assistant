@@ -10,6 +10,7 @@ import datetime
 import io
 import json
 import logging
+import re
 import uuid
 from collections import defaultdict
 from dataclasses import dataclass, field
@@ -25,7 +26,7 @@ from PIL import Image
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    handlers=[logging.StreamHandler()],
+    handlers=[logging.StreamHandler(), logging.FileHandler("app.log")],
 )
 logger = logging.getLogger(__name__)
 
@@ -127,6 +128,15 @@ class Prompt:
     def _format_field(self, label: str, value: Optional[str]) -> Optional[str]:
         """Format a field with its label if value exists."""
         return f"{label}: {value.strip()}" if value else None
+
+    def check_for_negation_words(self, prompt: str) -> List[str]:
+        """Checks if the given words exist in the text as whole words."""
+
+        found_words = []
+        for word in self.NEGATION_WORDS:
+            if re.search(r"\b" + word + r"\b", prompt.lower()):
+                found_words.append(word)
+        return found_words
 
     def generate_prompt(self) -> str:
         """
@@ -511,8 +521,9 @@ def createForm() -> None:
             prompt = prompt_template.generate_prompt()
             logger.info(f"Prompt: {prompt}")
 
-            if any(word in prompt for word in prompt_template.NEGATION_WORDS):
-                words = ", ".join(list(prompt_template.NEGATION_WORDS))
+            negation_words = prompt_template.check_for_negation_words(prompt)
+            if negation_words:
+                words = ", ".join(list(negation_words))
                 warnings_message = f"The model doesn't understand negation in a prompt and attempting to use negation will result in the opposite of what you intend. For example, a prompt such as 'a fruit basket with no bananas' will actually signal the model to include bananas in the image. You should removes these words in the prompt: {words}"
                 st.sidebar.warning(warnings_message)
                 logger.warning(warnings_message)
@@ -795,7 +806,7 @@ def generate_body(request_params: RequestParameters) -> str:
     Entrypoint for Amazon Nova Canvas  example.
     """
 
-    request_params = json.dumps(
+    body = json.dumps(
         {
             "taskType": "TEXT_IMAGE",
             "textToImageParams": {
@@ -814,8 +825,8 @@ def generate_body(request_params: RequestParameters) -> str:
         }
     )
 
-    logger.info("Request body: %s", request_params)
-    return request_params
+    logger.info(json.dumps(body))
+    return body
 
 
 def generate_image(model_id, body) -> list[bytes]:

@@ -768,7 +768,9 @@ def save_images(images) -> None:
     """
     for image_bytes in images:
         image = Image.open(io.BytesIO(image_bytes))
-        image.save(f"{IMAGE_DIRECTORY}/image-{str(uuid.uuid4())}.jpg", "JPEG")
+        image_filename = f"image-{str(uuid.uuid4())}.jpg"
+        logger.info(f"Saving image: {image_filename}")
+        image.save(f"{IMAGE_DIRECTORY}/{image_filename}", "JPEG", quality=95)
 
 
 def display_prompt_details(

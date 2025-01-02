@@ -26,6 +26,7 @@ Features of app include:
 - Image Aspect Ratio: Confirms the image is within the maximum aspect ratio limit
 - Image Dimensions: Confirms the image is within the minimum and maximum pixel width and height limits
 - Image Display and Saving: Generate, display, and save up to five images per request
+- Logging: Log all request parameters and generated image names for future reference
 
 ## Image Samples
 
